@@ -23,29 +23,23 @@
         </div>
     </nav>
     <div class="container">
-        <h1>Lista de Estudantes</h1>
+        <h1>Lista de Professores</h1>
         <table class="table">
             <thead>
                 <tr>
-                    <th>Matricula</th>
+                    <th>ID / Codigo</th>
                     <th>Nome</th>
-                    <th>Email</th>
-                    <th>Ano Egresso</th>
+                    <th>Horario</th>
+                    <th>Professor</th>
                     <th>Disciplinas</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="estudante : ${listaEstudante}">
-                    <td th:text="${estudante.matricula}"></td>
-                    <td th:text="${estudante.nomeCompleto}"></td>
-                    <td th:text="${estudante.email}"></td>
-                    <td th:text="${estudante.anoEgresso}"></td>
-                    <td>
-                        <ul>
-                            <li th:each="curso : ${estudante.disciplinas}" th:text="${curso.nome}"></li>
-                        </ul>
-                    </td>
-
+                <tr th:each="disciplina : ${listaDisciplina}">
+                    <td th:text="${disciplina.id}"></td>
+                    <td th:text="${disciplina.nome}"></td>
+                    <td th:text="${disciplina.datetime}"></td>
+                    <td th:text="${disciplina.professor}"></td>
                 </tr>
             </tbody>
         </table>

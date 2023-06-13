@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Estudantes {
@@ -18,7 +18,7 @@ public class Estudantes {
     private String email;
     private Integer anoEgresso;
     // Max 10
-    @OneToMany
+    @ManyToMany
     private List<Disciplinas> disciplinas;
 
     public Estudantes() {

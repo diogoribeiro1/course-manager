@@ -12,16 +12,16 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Home</a>
+        <a class="navbar-brand" href="/">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Disciplinas</a>
+                <a class="nav-item nav-link active" href="disciplinaPage">Disciplinas</a>
                 <a class="nav-item nav-link" href="estudantesPage">Estudantes</a>
-                <a class="nav-item nav-link" href="#">Professores</a>
+                <a class="nav-item nav-link" href="professorPage">Professores</a>
             </div>
         </div>
     </nav>
@@ -96,8 +96,6 @@
                 <div class="modal-body">
                     <!-- Formulário de Cadastro de Estudante -->
                     <form action="#" th:action="@{/estudantes}" th:object="${estudante}" method="post">
-                        <label>ID/Matrícula:</label>
-                        <input type="text" name="matricula" th:field="*{matricula}" required><br>
                         <label>Nome Completo:</label>
                         <input type="text" name="nome" th:field="*{nomeCompleto}" required><br>
                         <label>Email:</label>
@@ -129,8 +127,6 @@
                     <!-- Formulário de Cadastro de Professor -->
                     <form action="#" th:action="@{/professores}" th:object="${prof}" method="post">
                         <!-- Campos do formulário -->
-                        <label>ID/Matrícula:</label>
-                        <input type="text" name="matricula" th:field="*{matricula}" required><br>
                         <label>Nome Completo:</label>
                         <input type="text" name="nome" th:field="*{nomeCompleto}" required><br>
                         <label>Email:</label>
@@ -161,8 +157,6 @@
                 <div class="modal-body">
                     <!-- Formulário de Cadastro de Disciplina -->
                     <form action="#" th:action="@{/disciplinas}" th:object="${disciplina}" method="post">
-                        <label>Código da Disciplina:</label>
-                        <input type="text" name="codigo" th:field="*{id}" required><br>
                         <label>Nome:</label>
                         <input type="text" name="nome" th:field="*{nome}" required><br>
                         <label>Professor:</label>

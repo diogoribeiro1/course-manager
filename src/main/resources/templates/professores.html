@@ -23,7 +23,7 @@
         </div>
     </nav>
     <div class="container">
-        <h1>Lista de Estudantes</h1>
+        <h1>Lista de Professores</h1>
         <table class="table">
             <thead>
                 <tr>
@@ -35,17 +35,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="estudante : ${listaEstudante}">
-                    <td th:text="${estudante.matricula}"></td>
-                    <td th:text="${estudante.nomeCompleto}"></td>
-                    <td th:text="${estudante.email}"></td>
-                    <td th:text="${estudante.anoEgresso}"></td>
+                <tr th:each="prof : ${listaProf}">
+                    <td th:text="${prof.matricula}"></td>
+                    <td th:text="${prof.nomeCompleto}"></td>
+                    <td th:text="${prof.email}"></td>
+                    <td th:text="${prof.anoEgresso}"></td>
                     <td>
                         <ul>
-                            <li th:each="curso : ${estudante.disciplinas}" th:text="${curso.nome}"></li>
+                            <li th:each="curso : ${prof.disciplinas}" th:text="${curso.nome}"></li>
                         </ul>
                     </td>
-
                 </tr>
             </tbody>
         </table>
