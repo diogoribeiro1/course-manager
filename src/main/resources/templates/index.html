@@ -172,18 +172,31 @@
                     <form action="#" th:action="@{/disciplinas}" th:object="${disciplina}" method="post">
                         <label>Nome:</label>
                         <input type="text" name="nome" th:field="*{nome}" required><br>
+                        <label>Dia da semana:</label>
+                        <select name="diaSemana" required>
+                            <option value="Segunda-Feira">Segunda-Feira</option>
+                            <option value="Terça-Feira">Terça-Feira</option>
+                            <option value="Quarta-Feira">Quarta-Feira</option>
+                            <option value="Quinta-Feira">Quinta-Feira</option>
+                            <option value="Sexta-Feira">Sexta-Feira</option>
+                        </select><br>
+                        <label>Horário:</label>
+                        <select name="horario" required>
+                            <option value="07:00 - 09:40">07:00 - 09:40</option>
+                            <option value="09:50 - 12:30">09:50 - 12:30</option>
+                        </select><br>
                         <label>Professor:</label>
                         <br>
                         <select name="professor" required>
                             <option th:each="professor : ${professores}" th:value="${professor.matricula}"
                                 th:text="${professor.email}"></option>
                         </select><br>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
-                </div>
-                </form>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        </div>
+                    </form>
+                    
             </div>
         </div>
     </div>

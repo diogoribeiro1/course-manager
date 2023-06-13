@@ -23,7 +23,7 @@
         </div>
     </nav>
     <div class="container">
-        <h1>Lista de Professores</h1>
+        <h1>Lista de Disciplinas</h1>
         <table class="table">
             <thead>
                 <tr>
@@ -31,7 +31,6 @@
                     <th>Nome</th>
                     <th>Horario</th>
                     <th>Professor</th>
-                    <th>Disciplinas</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,7 +38,7 @@
                     <td th:text="${disciplina.id}"></td>
                     <td th:text="${disciplina.nome}"></td>
                     <td th:text="${disciplina.datetime}"></td>
-                    <td th:text="${disciplina.professor}"></td>
+                    <td th:text="${disciplina.professor.email}"></td>
                 </tr>
             </tbody>
         </table>

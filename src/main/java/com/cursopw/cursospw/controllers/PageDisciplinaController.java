@@ -15,8 +15,8 @@ public class PageDisciplinaController {
 
     @GetMapping("/disciplinaPage")
     public String listaDisciplina(ModelMap modelMap){
-        var lista = disciplinaRepository.findAll();
-        modelMap.addAttribute("listaDisciplina", lista);
+        var listaDisciplina = disciplinaRepository.findAll();
+        modelMap.addAttribute("listaDisciplina", listaDisciplina);
         return "disciplinas";
     }
 }

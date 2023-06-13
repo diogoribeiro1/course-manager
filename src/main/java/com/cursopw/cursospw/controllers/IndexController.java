@@ -65,7 +65,8 @@ public class IndexController {
     }
 
     @PostMapping("/disciplinas")
-    public String cadastrarDisciplina(Disciplinas disciplina) { 
+    public String cadastrarDisciplina(Disciplinas disciplina, @RequestParam String diaSemana, @RequestParam String horario) { 
+        disciplina.setDatetime(diaSemana + " - " + horario);
         disciplinaRepository.save(disciplina);
         return "redirect:/";
     }
