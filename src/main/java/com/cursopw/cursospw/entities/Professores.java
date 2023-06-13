@@ -17,7 +17,7 @@ public class Professores {
     private Integer matricula;
     private String nomeCompleto;
     private String email;
-    private LocalDate anoEgresso;
+    private Integer anoEgresso;
     // Max 10
     @OneToMany(mappedBy = "professor")
     private List<Disciplinas> disciplinas;
@@ -26,14 +26,14 @@ public class Professores {
     }
     
 
-    public Professores(String nomeCompleto, String email, LocalDate anoEgresso) {
+    public Professores(String nomeCompleto, String email, Integer anoEgresso) {
         this.nomeCompleto = nomeCompleto;
         this.email = email;
         this.anoEgresso = anoEgresso;
     }
 
 
-    public Professores(Integer matricula, String nomeCompleto, String email, LocalDate anoEgresso,
+    public Professores(Integer matricula, String nomeCompleto, String email, Integer anoEgresso,
             List<Disciplinas> disciplinas) {
         this.matricula = matricula;
         this.nomeCompleto = nomeCompleto;
@@ -66,11 +66,11 @@ public class Professores {
         this.email = email;
     }
 
-    public LocalDate getAnoEgresso() {
+    public Integer getAnoEgresso() {
         return anoEgresso;
     }
 
-    public void setAnoEgresso(LocalDate anoEgresso) {
+    public void setAnoEgresso(Integer anoEgresso) {
         this.anoEgresso = anoEgresso;
     }
 
@@ -84,4 +84,13 @@ public class Professores {
         }
         this.disciplinas = disciplinas;
     }
+
+
+    @Override
+    public String toString() {
+        return "Professores [matricula=" + matricula + ", nomeCompleto=" + nomeCompleto + ", email=" + email
+                + ", anoEgresso=" + anoEgresso + ", disciplinas=" + disciplinas + "]";
+    }
+
+    
 }

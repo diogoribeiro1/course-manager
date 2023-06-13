@@ -58,4 +58,11 @@ public class Disciplinas {
     public void setDatetime(String datetime) {
         this.datetime = datetime;
     }
+
+    @Override
+    public String toString() {
+        return "Disciplinas [id=" + id + ", nome=" + nome + ", datetime=" + datetime + ", professor=" + professor + "]";
+    }
+
+    
 }

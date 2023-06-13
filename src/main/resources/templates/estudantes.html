@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Estudantes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Disciplinas</a>
+                <a class="nav-item nav-link" href="estudantesPage">Estudantes</a>
+                <a class="nav-item nav-link" href="#">Professores</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Lista de Estudantes</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Matricula</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Ano Egresso</th>
+                    <th>Disciplinas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="estudante : ${listaEstudante}">
+                    <td th:text="${estudante.matricula}"></td>
+                    <td th:text="${estudante.nomeCompleto}"></td>
+                    <td th:text="${estudante.email}"></td>
+                    <td th:text="${estudante.anoEgresso}"></td>
+                    <td>
+                        <ul>
+                            <li th:each="curso : ${estudante.disciplinas}" th:text="${curso.nome}"></li>
+                        </ul>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
