@@ -9,12 +9,12 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Home</title>
     <style>
-        input{
+        input {
             width: 100%;
             margin-bottom: 10px;
         }
 
-        .btn.btn-primary{
+        .btn.btn-primary {
             margin: 0 20px;
         }
     </style>
@@ -82,7 +82,8 @@
                                     th:text="${estudante.email}"></option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="display: flex; justify-content: ceenter;margin:0 auto; margin-top:20px;">Matricular</button>
+                        <button type="submit" class="btn btn-primary"
+                            style="display: flex; justify-content: ceenter;margin:0 auto; margin-top:20px;">Matricular</button>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -196,10 +197,21 @@
                             <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </div>
                     </form>
-                    
+                </div>
             </div>
         </div>
     </div>
+    <!-- Seção do JavaScript -->
+    <script th:inline="javascript">
+        /* Recupera a mensagem de alerta do modelo */
+        var alertMessage = /*[[${alertMessage}]]*/ null;
+
+        /* Verifica se há uma mensagem de alerta */
+        if (alertMessage) {
+            /* Exibe o alerta */
+            alert(alertMessage);
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

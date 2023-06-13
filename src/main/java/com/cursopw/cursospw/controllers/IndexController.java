@@ -1,7 +1,11 @@
 package com.cursopw.cursospw.controllers;
 
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,7 +31,7 @@ public class IndexController {
 
     @Autowired
     private DisciplinaRepository disciplinaRepository;
-    
+
     @GetMapping("/")
     public String home(ModelMap model) {
         var listaProf = professorRepository.findAll();
@@ -45,9 +49,20 @@ public class IndexController {
 
     @PostMapping("/matricula")
     @Transactional
-    public String matriculaEstudante(@RequestParam Integer disciplina, @RequestParam Integer estudante) { 
-        var estudanteMatriculado  = estudanteRepository.findById(estudante).get();
+    public String matriculaEstudante(@RequestParam Integer disciplina, @RequestParam Integer estudante, Model model) {
+        var estudanteMatriculado = estudanteRepository.findById(estudante).get();
         var disciplinaMatriculada = disciplinaRepository.findById(disciplina).get();
+
+        Optional<Disciplinas> disciplinaEncontrada = estudanteMatriculado.getDisciplinas()
+                .stream()
+                .filter(e -> e.getId() == disciplina)
+                .findFirst();
+
+        if (disciplinaEncontrada.isPresent()) {
+            model.addAttribute("alertMessage", "Aluno já matriculado na disciplina");
+            return "redirect:/";
+        }
+
         estudanteMatriculado.getDisciplinas().add(disciplinaMatriculada);
         return "redirect:/";
     }
@@ -65,7 +80,8 @@ public class IndexController {
     }
 
     @PostMapping("/disciplinas")
-    public String cadastrarDisciplina(Disciplinas disciplina, @RequestParam String diaSemana, @RequestParam String horario) { 
+    public String cadastrarDisciplina(Disciplinas disciplina, @RequestParam String diaSemana,
+            @RequestParam String horario) {
         disciplina.setDatetime(diaSemana + " - " + horario);
         disciplinaRepository.save(disciplina);
         return "redirect:/";
