@@ -18,7 +18,7 @@ public class Estudantes {
     private String email;
     private Integer anoEgresso;
     // Max 10
-    @ManyToMany
+    @ManyToMany(cascade = jakarta.persistence.CascadeType.ALL)
     private List<Disciplinas> disciplinas;
 
     public Estudantes() {
