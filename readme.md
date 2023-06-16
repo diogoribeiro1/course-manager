@@ -2,18 +2,28 @@
 
 Sistema web para o controle do quadro de horário acadêmico do curso Engenharia de Software
 
-## Teste em Produção
-
-https://data-structure-production.up.railway.app/
-
 ## Tecnologias Utilizadas
 
 - Java 11
 - Spring / Spring Boot
+- PostgreSQL
 - HTML
 - CSS
 - JavaScript
 - Bootstrap
+
+## Telas
+
+https://github.com/diogoribeiro1/course-manager/assets/89152312/55ee9fed-76cc-4196-b127-b4d2fbd1e6a4
+
+![Screenshot from 2023-06-15 23-38-29](https://github.com/diogoribeiro1/course-manager/assets/89152312/27b7c6c9-23b6-4aba-b83f-4db60cdda602)
+![Screenshot from 2023-06-15 23-38-35](https://github.com/diogoribeiro1/course-manager/assets/89152312/97fd7b45-2d51-447c-9f2b-63ef79feb0f8)
+![Screenshot from 2023-06-15 23-38-41](https://github.com/diogoribeiro1/course-manager/assets/89152312/7a65ffac-a8fb-4a33-8543-f78f2b08cd12)
+![Screenshot from 2023-06-15 23-38-45](https://github.com/diogoribeiro1/course-manager/assets/89152312/e4b43a96-a5a8-496c-adb2-a627a81fd460)
+![Screenshot from 2023-06-15 23-38-50](https://github.com/diogoribeiro1/course-manager/assets/89152312/0f361065-b925-4f6f-abcd-87936b71e9e7)
+![Screenshot from 2023-06-15 23-38-57](https://github.com/diogoribeiro1/course-manager/assets/89152312/ab730c4f-2780-4c1e-b9c2-ec35830cc110)
+![Screenshot from 2023-06-15 23-39-02](https://github.com/diogoribeiro1/course-manager/assets/89152312/eba030d4-5416-49d5-9821-0de591c61b23)
+![Screenshot from 2023-06-15 23-39-06](https://github.com/diogoribeiro1/course-manager/assets/89152312/77755b2a-1577-439e-9ac6-e4125747988f)
 
 ## Funcionalidades do Sistema
 
